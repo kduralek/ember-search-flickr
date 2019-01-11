@@ -1,0 +1,47 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 mx-auto mb-5">
+      {{input-search
+        placeholder="Type here to search for Flickr images"
+        query=this.search
+        debounceTime=this.debounceTime
+        onTypeAhead=(action "onTypeAhead")}}
+    </div>
+  </div>
+
+  {{#if this.hasResults}}
+    <p class="py-3 px-3 bg-light">
+      Showing <strong>{{this.model.total}}</strong> results for phrase: <strong>{{this.search}}</strong>
+    </p>
+    <div class="row mb-3">
+      {{#each this.model.list as |photo|}}
+        <div class="col-3">
+          {{list-item-image url=photo.url title=photo.title}}
+        </div>
+      {{/each}}
+    </div>
+
+    {{list-paginate totalPages=totalPages page=page previousPage=previousPage nextPage=nextPage}}
+
+  {{/if}}
+
+  {{#if this.hasNoResults}}
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <h4 class="text-center">No results found</h4>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if this.searchTextTooShort}}
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <h5 class="text-center my-4">
+          Enter at least {{minSearchChars}} characters to see results. <br>
+          Try {{#link-to (query-params search="flower" page=1)}}flower{{/link-to}} or
+          {{#link-to (query-params search="sunset" page=1)}}sunset{{/link-to}}
+        </h5>
+      </div>
+    </div>
+  {{/if}}
+</div>

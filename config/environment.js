@@ -18,9 +18,14 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+      flickr: {
+        url: 'https://api.flickr.com/services/rest',
+        apiKey: '835a76545614abd8ce3aa826948ef6ec',
+        perPage: 12,
+        searchMinChars: 3,
+        searchDebounceTime: 500
+      }
+    },
   };
 
   if (environment === 'development') {

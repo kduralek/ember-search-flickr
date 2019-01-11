@@ -1,0 +1,10 @@
+<input
+  autofocus
+  class="form-control"
+  placeholder={{this.placeholder}}
+  value={{this.query}}
+  onkeyup={{action "onValueChange" value="target.value"}}>
+
+{{#if showClearButton}}
+  <button class="input-search__clear" {{action "clear"}}>&times;</button>
+{{/if}}

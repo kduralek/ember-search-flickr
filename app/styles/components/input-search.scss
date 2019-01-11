@@ -1,0 +1,21 @@
+.input-search {
+  position: relative;
+  @include fadeIn();
+
+  &__clear {
+    @include fadeIn();
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    line-height: 20px;
+    font-size: 18px;
+    background: #ccc;
+    border-radius: 100%;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+  }
+}

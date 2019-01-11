@@ -1,0 +1,12 @@
+// required settings
+@import "../../../node_modules/animatewithsass/_properties";
+
+// override some settings
+$durationDefault: 0.3s;
+
+// import animations
+@import "../../../node_modules/animatewithsass/_fading-entrances/fadeIn";
+
+.fadeIn {
+  @include fadeIn();
+}

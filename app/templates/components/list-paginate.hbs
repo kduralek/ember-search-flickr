@@ -1,0 +1,9 @@
+<div class="row">
+  {{#link-to (query-params page=previousPage) class="btn btn-outline-secondary" disabled=previousPageDisabled}}&lt; Prev{{/link-to}}
+
+  <div class="my-1 mx-auto">
+    <small class="text-muted">{{page}} / {{totalPages}}</small>
+  </div>
+
+  {{#link-to (query-params page=nextPage) class="btn btn-outline-secondary" disabled=nextPageDisabled}}Next &gt;{{/link-to}}
+</div>
